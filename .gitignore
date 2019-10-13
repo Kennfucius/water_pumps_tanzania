@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# data files too large for github
+data/*.pkl
+data/*.npz
