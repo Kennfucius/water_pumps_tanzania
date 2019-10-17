@@ -16,9 +16,10 @@ https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table
 ## EDA
 59,400 unique water pumps described by 39 features comprise the dataset. Each water pump is represented exactly once in the dataset and thus the shape of the training data is 59,400x39. Figure 1 below illustrates the large class imbalance with the following breakdown: 54.3% - functional, 7.3% - functional but require repair, 38.4% - non functional.
 
+Although the data goes as far back as 2002, the majority of the data was collected between 2011 and 2014. The majority of pumps use gravity as the pumping mechanism. We have no description of one columns, num_private. There are a total of 7 feature columns with missing data which will either need to be imputed or rows will need to be dropped for a dense training matrix. Some of the feature columns are either duplicates or derived from other feature columns and getting rid of these will help reduce the total number of features. The majority of columns are categorical with string datatypes and will need to be converted to numeric or dummy variables. I think we have a good understanding of the data to start munging it and preparing it for the Random Forest model. So let the munging begin!
+
 #### Figure 1 | Sector ETF Time Series
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<iframe width="100%" height="550" frameborder="0" scrolling="no" src="/results/pump-conditions.html"></iframe>
+![pump-conditions](results/pump-conditions.html)
 
 ## References
 
