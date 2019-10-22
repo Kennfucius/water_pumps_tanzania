@@ -1,25 +1,27 @@
 # Improving Access to Clean, Safe Drinking Water in Tanzania
 Classification model for predicting functional status of water pumps in Tanzania.
 
+A full report of the results can be found on my portfolio here:
+
+<a href="https://kennfucius.github.io/0005-water-tanzania/">https://kennfucius.github.io/0005-water-tanzania/</a>
+
+The full analysis is broken into the 3 notebooks:
+<a href="https://nbviewer.jupyter.org/github/Kennfucius/water_pumps_tanzania/blob/master/Tanzania%20Water%20Pumps%20-%20EDA%20Part%201.ipynb">Tanzania Water Pumps - EDA Part 1</a>
+<a href="https://nbviewer.jupyter.org/github/Kennfucius/water_pumps_tanzania/blob/master/Tanzania%20Water%20Pumps%20-%20Data%20Munging.ipynb">Tanzania Water Pumps - Data Munging</a>
+<a href="https://nbviewer.jupyter.org/github/Kennfucius/water_pumps_tanzania/blob/master/Tanzania%20Water%20Pumps%20-%20Model.ipynb">Tanzania Water Pumps - Model</a>
+
 ## Motivation
-Tanzania is recognized by the UN as a least developed country, or LDC<sup>1</sup>. LDCs are, in part, defined by the UN as "low-income countries confronting severe structural impediments to sustainable development"<sup>2</sup>. One critical impediment the country has struggled with for decades has been supplying and maintaining access to clean and safe drinking water for Tanzanians. In 2017, a reported 24.8 million citizens lacked access to 'at least basic' water<sup>3</sup>. For those fortunate enough to have access to this mandatory resource at any given time, it is never gauranteed.
+Tanzania is recognized by the UN as a least developed country, or LDC<sup>1</sup>. LDCs are, in part, defined by the UN as "low-income countries confronting severe structural impediments to sustainable development"<sup>2</sup>. One critical impediment the country has struggled with for decades has been supplying and maintaining access to clean and safe drinking water for its population. In 2017, a reported 24.8 million citizens lacked access to 'at least basic' water<sup>3</sup>. For those fortunate enough to have access to this life-essential resource at any given time, it is never gauranteed.
 
-In most of the rural parts of the country, much of the potable water is accessed via water pumps that draw water from local sources. Around 60,000 hand-pumps are installed in sub-Saharan Africa every year, but between 30 to 40% of those do not function at anyone one time<sup>4</sup>! These non-functioning pumps have realized an estimated loss of 1.2 billion USD over the last 2 decades<sup>4</sup>. One of the biggest challenges with maintaining non-functioning pumps is identifying the pumps that are in need of repair or have completely broken down. Once the functional status of a pump has been identified, the appropriate resources and man-power can be deployed to target sites in need of repair or replacement. Unfortunately, there is no efficient system to-date to tackle this monumental problem. The local governments and organizations tackling the water crisis simply do not possess enough time, resources, or man power to check every pump in the country. Identifying the functional status of these water pumps is therefore the focus of this work.
+In most rural parts of the country, much of the potable water is accessed via water pumps that draw water from local sources. Around 60,000 hand-pumps are installed in sub-Saharan Africa every year, but between 30 to 40% of those do not function at anyone one time<sup>4</sup>! When pumps no longer function, they are often abandoned. These non-functioning pumps have realized an estimated loss of $1.2 billion USD over the last 2 decades<sup>4</sup>. The first step in addressing this problem is identifying the functional status of water pumps. Once the functional status of a pump is known, the appropriate resources can be deployed to target sites in need of repair or replacement. Unfortunately, there is currently no efficient or accurate system to tackle this monumental problem. The status of a pump must be physically checked but local governments and organizations battling the water crisis simply do not possess enough time, resources, or man-power to check the millions of pumps distributed throughout the country. Alternative methods to identifying the functional status of these water pumps is therefore critical to ensuring access to clean drinking water and is the focus of this work.
 
-Taarifa is an open-source platform for crowd-sourced reporting and triaging of infrastructure related issues. Together with the Tanzanian Ministry of Water, data has been collected for thousands of water pumps throughout Tanzania. The goal of this project is to be able to predict the condition of these water pumps to improve allocation of resources and pump maintenance, reduce pump downtime, and ensure basic water access for tens of millions of Tanzanians.
+The problem statement can be phrased as follows. Data exists for tens of thousands of pumps which are assumed to be functional, but we don't actually know until someone is sent out to physically check the pump's status. Rather than physically checking every pump, can we predict with some accuracy better than random, which pumps will be functional and which will be non functional? The desired out come is to improve on the current state by more allocating resources for pump maintenance more efficiently, reducing pump downtime, and ensuring basic water access for tens of millions of Tanzanians.
 
-### The Data
-The dataset is provided by Taarifa, together with the Tanzanian Ministry of Water and is hosted by DrivenData.org:
+## Conclusions
 
-https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/page/23/
+I designed a random forest classification model to predict the functional status of water pumps in Tanzania. I employed a Bayesion optimization algorithm to tune the hyperparameters. The model achieved a precision of 0.84 and a recall of 0.79 on a test dataset, while the overall classification rate was 0.81. Using the proportion of `non functional` pumps in this sample, I computed an average savings in resources of 19.2% over the current state. This savings could be used to deploy additional pump replacements in places with critical need. I also created a simple calculator to help organization involved in tackling the water crisis to estimate the savings they could realize if employing the model presented in this work.
 
-## EDA
-59,400 unique water pumps described by 39 features comprise the dataset. Each water pump is represented exactly once in the dataset and thus the shape of the training data is 59,400x39. Figure 1 below illustrates the large class imbalance with the following breakdown: 54.3% - functional, 7.3% - functional but require repair, 38.4% - non functional.
-
-Although the data goes as far back as 2002, the majority of the data was collected between 2011 and 2014. The majority of pumps use gravity as the pumping mechanism. We have no description of one columns, num_private. There are a total of 7 feature columns with missing data which will either need to be imputed or rows will need to be dropped for a dense training matrix. Some of the feature columns are either duplicates or derived from other feature columns and getting rid of these will help reduce the total number of features. The majority of columns are categorical with string datatypes and will need to be converted to numeric or dummy variables. I think we have a good understanding of the data to start munging it and preparing it for the Random Forest model. So let the munging begin!
-
-#### Figure 1 | Sector ETF Time Series
-![pump-conditions](results/pump-conditions.html)
+Finally, I explored several interesting questions in the EDA section that motivate the engineering of new features. For example, I computed that the `mono` pump type is `non functional` 57.7% of the time while the nira/tanira pumps are `non functional` only 25.7% of the time. I also showed that the average population served by each pump type can vary anywhere between 148 and 408 people. These important factors related to each pump type may significantly contribute to the model's predictive power. This is left for future work.
 
 ## References
 
@@ -27,4 +29,5 @@ Although the data goes as far back as 2002, the majority of the data was collect
 2. https://www.un.org/development/desa/dpad/least-developed-country-category.html
 3. https://washwatch.org/en/countries/tanzania/summary/statistics/
 4. https://www.theguardian.com/global-development-professionals-network/2016/mar/22/how-do-you-solve-a-problem-like-a-broken-water-pump
-5. http://www.ropepumps.org/uploads/2/9/9/2/29929105/rope_pump_-_piston_pumps._comp._study_tz.pdf
+5. https://en.wikipedia.org/wiki/India_Mark_II
+6. http://www.ropepumps.org/uploads/2/9/9/2/29929105/rope_pump_-_piston_pumps._comp._study_tz.pdf
