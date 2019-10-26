@@ -10,6 +10,9 @@ The full analysis is broken into the 3 notebooks:
 <a href="https://nbviewer.jupyter.org/github/Kennfucius/water_pumps_tanzania/blob/master/Tanzania%20Water%20Pumps%20-%20Data%20Munging.ipynb">Tanzania Water Pumps - Data Munging</a>
 <a href="https://nbviewer.jupyter.org/github/Kennfucius/water_pumps_tanzania/blob/master/Tanzania%20Water%20Pumps%20-%20Model.ipynb">Tanzania Water Pumps - Model</a>
 
+Slide deck:
+<a href="https://docs.google.com/presentation/d/1tpjoIbZpF_rh90Ll9jmOdtcqJTNruEpbDJcpelXd3rA/edit?usp=sharing">Slides</a>
+
 ## Motivation
 Tanzania is recognized by the UN as a least developed country, or LDC<sup>1</sup>. LDCs are, in part, defined by the UN as "low-income countries confronting severe structural impediments to sustainable development"<sup>2</sup>. One critical impediment the country has struggled with for decades has been supplying and maintaining access to clean and safe drinking water for its population. In 2017, a reported 24.8 million citizens lacked access to 'at least basic' water<sup>3</sup>. For those fortunate enough to have access to this life-essential resource at any given time, it is never gauranteed.
 
