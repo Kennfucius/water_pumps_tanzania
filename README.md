@@ -3,10 +3,7 @@ Classification model for predicting functional status of water pumps in Tanzania
 
 ## Resources
 
-The original data source is hosted on DrivenData at:
-<a href="https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/page/23/">Original data source<a>
-
-A full report of the results can be found on my portfolio here:
+A full blog post of this project can be found on my portfolio here:
 <a href="https://kennfucius.github.io/0005-water-tanzania/">https://kennfucius.github.io/0005-water-tanzania/</a>
 
 The full analysis is broken into the 3 notebooks:
@@ -19,6 +16,9 @@ The full analysis is broken into the 3 notebooks:
 
 Slides for a 15 min talk of this project:
 <a href="https://docs.google.com/presentation/d/1tpjoIbZpF_rh90Ll9jmOdtcqJTNruEpbDJcpelXd3rA/edit?usp=sharing">Slide Deck</a>
+
+The **original data** source is hosted on DrivenData at:
+<a href="https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/page/23/">Original data source<a>
 
 ## Motivation
 Tanzania is recognized by the UN as a least developed country, or LDC<sup>1</sup>. LDCs are, in part, defined by the UN as "low-income countries confronting severe structural impediments to sustainable development"<sup>2</sup>. One critical impediment the country has struggled with for decades has been supplying and maintaining access to clean and safe drinking water for its population. In 2017, a reported 24.8 million citizens lacked access to 'at least basic' water<sup>3</sup>. For those fortunate enough to have access to this life-essential resource at any given time, it is never gauranteed.
