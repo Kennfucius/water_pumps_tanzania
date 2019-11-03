@@ -1,6 +1,8 @@
 # Improving Access to Clean, Safe Drinking Water in Tanzania
 Classification model for predicting functional status of water pumps in Tanzania.
 
+## Resources
+
 The original data source is hosted on DrivenData at:
 <a href="https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/page/23/">Original data source<a>
 
