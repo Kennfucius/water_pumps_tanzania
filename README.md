@@ -6,12 +6,14 @@ A full report of the results can be found on my portfolio here:
 <a href="https://kennfucius.github.io/0005-water-tanzania/">https://kennfucius.github.io/0005-water-tanzania/</a>
 
 The full analysis is broken into the 3 notebooks:
+<br>
 <a href="https://nbviewer.jupyter.org/github/Kennfucius/water_pumps_tanzania/blob/master/Tanzania%20Water%20Pumps%20-%20EDA%20Part%201.ipynb">Tanzania Water Pumps - EDA Part 1</a>
 <br>
 <a href="https://nbviewer.jupyter.org/github/Kennfucius/water_pumps_tanzania/blob/master/Tanzania%20Water%20Pumps%20-%20Data%20Munging.ipynb">Tanzania Water Pumps - Data Munging</a>
 <br>
 <a href="https://nbviewer.jupyter.org/github/Kennfucius/water_pumps_tanzania/blob/master/Tanzania%20Water%20Pumps%20-%20Model.ipynb">Tanzania Water Pumps - Model</a>
 
+Slides for a 15 min talk of this project:
 <a href="https://docs.google.com/presentation/d/1tpjoIbZpF_rh90Ll9jmOdtcqJTNruEpbDJcpelXd3rA/edit?usp=sharing">Slide Deck</a>
 
 ## Motivation
