@@ -7,11 +7,12 @@ A full report of the results can be found on my portfolio here:
 
 The full analysis is broken into the 3 notebooks:
 <a href="https://nbviewer.jupyter.org/github/Kennfucius/water_pumps_tanzania/blob/master/Tanzania%20Water%20Pumps%20-%20EDA%20Part%201.ipynb">Tanzania Water Pumps - EDA Part 1</a>
+<br>
 <a href="https://nbviewer.jupyter.org/github/Kennfucius/water_pumps_tanzania/blob/master/Tanzania%20Water%20Pumps%20-%20Data%20Munging.ipynb">Tanzania Water Pumps - Data Munging</a>
+<br>
 <a href="https://nbviewer.jupyter.org/github/Kennfucius/water_pumps_tanzania/blob/master/Tanzania%20Water%20Pumps%20-%20Model.ipynb">Tanzania Water Pumps - Model</a>
 
-Slide deck:
-<a href="https://docs.google.com/presentation/d/1tpjoIbZpF_rh90Ll9jmOdtcqJTNruEpbDJcpelXd3rA/edit?usp=sharing">Slides</a>
+<a href="https://docs.google.com/presentation/d/1tpjoIbZpF_rh90Ll9jmOdtcqJTNruEpbDJcpelXd3rA/edit?usp=sharing">Slide Deck</a>
 
 ## Motivation
 Tanzania is recognized by the UN as a least developed country, or LDC<sup>1</sup>. LDCs are, in part, defined by the UN as "low-income countries confronting severe structural impediments to sustainable development"<sup>2</sup>. One critical impediment the country has struggled with for decades has been supplying and maintaining access to clean and safe drinking water for its population. In 2017, a reported 24.8 million citizens lacked access to 'at least basic' water<sup>3</sup>. For those fortunate enough to have access to this life-essential resource at any given time, it is never gauranteed.
@@ -22,9 +23,9 @@ The problem statement can be phrased as follows. Data exists for tens of thousan
 
 ## Conclusions
 
-I designed a random forest classification model to predict the functional status of water pumps in Tanzania. I employed a Bayesion optimization algorithm to tune the hyperparameters. The model achieved a precision of 0.84 and a recall of 0.79 on a test dataset, while the overall classification rate was 0.81. Using the proportion of `non functional` pumps in this sample, I computed an average savings in resources of 19.2% over the current state. This savings could be used to deploy additional pump replacements in places with critical need. I also created a simple calculator to help organization involved in tackling the water crisis to estimate the savings they could realize if employing the model presented in this work.
+A random forest classification model was used to predict the functional status of water pumps in Tanzania. A Bayesion optimization algorithm was used to tune the hyperparameters of the model. A precision of 0.84 and a recall of 0.79 was achieved on a test dataset, while the overall classification rate was 0.81. The model offers average savings in resources of 19.2% over the current state. This savings could be used to deploy additional pump replacements in places with critical need. Finally, a simple calculator is offered to help organization involved in tackling the water crisis to estimate the savings they could realize if employing the model presented in this work.
 
-Finally, I explored several interesting questions in the EDA section that motivate the engineering of new features. For example, I computed that the `mono` pump type is `non functional` 57.7% of the time while the nira/tanira pumps are `non functional` only 25.7% of the time. I also showed that the average population served by each pump type can vary anywhere between 148 and 408 people. These important factors related to each pump type may significantly contribute to the model's predictive power. This is left for future work.
+There are several next steps to explore for this project. The first is to engineer new features based on the questions answered in the EDA section. The second is to deep dive the misclassified cases for the non functional class and understand why the model has a hard time predicting those particular pumps. Finally, an ensemble of several models may aid the overall classification rate by allowing the models to compensate each other’s weaknesses.
 
 ## References
 
